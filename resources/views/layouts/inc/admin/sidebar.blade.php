@@ -36,15 +36,15 @@
             </a>
             <div class="collapse" id="product">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="">Add Product</a>
+                    <li class="nav-item"> <a class="nav-link" href="{{ url('admin/category/create') }}">Add Product</a>
                     </li>
-                    <li class="nav-item"> <a class="nav-link" href="">View Product</a>
+                    <li class="nav-item"> <a class="nav-link" href="{{ url('admin/category') }}">View Product</a>
                     </li>
                 </ul>
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{ url('/admin/brands') }}">
                 <i class="mdi mdi-view-headline menu-icon"></i>
                 <span class="menu-title">Brands</span>
             </a>
