@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,14 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::post('/category', 'store');
         Route::get('/category/{category}/edit', 'edit');
         Route::put('/category/{category}', 'update');
+    });
+
+    Route::controller(ProductController::class)->group(function () {
+        Route::get('/products', 'index');
+        Route::get('/products/create', 'create');
+        Route::post('/products', 'store');
+        Route::get('/products/{category}/edit', 'edit');
+        Route::put('/products/{category}', 'update');
     });
 
     Route::get('/brands', App\Http\Livewire\Admin\Brand\Index::class);
