@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Livewire\Admin\Brand\Index;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +45,9 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::post('/products', 'store');
         Route::get('/products/{product}/edit', 'edit');
         Route::put('/products/{product}', 'update');
+        Route::get('/products/{product}/delete', 'destroy');
+
+        Route::get('/product-image/{product_image_id}/delete', 'destroyImage');
     });
 
     Route::get('/brands', App\Http\Livewire\Admin\Brand\Index::class);
